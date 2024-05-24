@@ -25,14 +25,15 @@ jobs:
       - name: Run Docker Compose
         run: docker-compose up -d
 
-      - name: Composer Install
-        run: |
-          docker-compose exec -w /app phpfpm composer install
+      - name: composer install
+        run: docker compose exec  composer install
 
-      - name: Migrate Database
-        run: |
-          docker-compose exec -w /app phpfpm bin/console doctrine:migrations:migrate --no-interaction
+      - name: migrate database
+        run: docker compose exec phpfpm bin/console doctrine:migrations:migrate
 
-      - name: Load Fixtures
-        run: |
-          docker-compose exec -w /app phpfpm bin/console doctrine:fixtures:load --no-interaction
+      - name: load fixtures
+        run: docker compose exec phpfpm bin/console doctrine:fixtures:load
+
+
+
+

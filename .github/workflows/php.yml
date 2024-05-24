@@ -14,7 +14,7 @@ jobs:
     steps:
       - name: Check if file exists
         run: |
-          if [ -f README.md ]; then
+          if [ -f .env ]; then
             echo "File exists"
             exit 0
           else

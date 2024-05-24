@@ -1,0 +1,22 @@
+name: Maybe fail in case of file creation
+
+on:
+  workflow_dispatch:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  action-scripts:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Check if file was created
+        run: |
+            if [ -f README.MD ]; then
+                echo "File exists"
+                exit 1
+            else
+                echo "File does not exist"
+            fi

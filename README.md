@@ -10,3 +10,4 @@ docker compose exec phpfpm bin/console doctrine:fixtures:load
 docker compose ps
 ```
 open the project in the browser :)
+check

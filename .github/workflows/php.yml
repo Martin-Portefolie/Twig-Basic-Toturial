@@ -12,7 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-
       - name: Check if file was created
         run: |
             if [ -f README.MD ]; then

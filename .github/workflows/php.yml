@@ -1,17 +1,18 @@
-name: Check if file exists
+name: Run Docker Compose
 
 on:
   push:
     branches:
       - main
 
-permissions:
-  contents: read
-
 jobs:
-  action-scripts:
+  docker-compose:
     runs-on: ubuntu-latest
     steps:
-      - name: start docker
-        run: docker compose up -d
+      - name: Checkout code
+        uses: actions/checkout@v2
 
+      # Add your other steps here (e.g., installing Docker, setting up environment, etc.)
+
+      - name: Run Docker Compose
+        run: docker-compose up -d

@@ -1,7 +1,9 @@
-name: Maybe fail in case of file creation
+name: Fail if file exists
 
 on:
   push:
+    branches:
+      - main
 
 permissions:
   contents: read
@@ -10,12 +12,11 @@ jobs:
   action-scripts:
     runs-on: ubuntu-latest
     steps:
-
       - name: Check if file was created
         run: |
-            if [ -f MADME1.MD ]; then
-                echo "File exists"
-                exit 1
-            else
-                echo "File does not exist"
-            fi
+          if [ -f MADME1.MD ]; then
+            echo "File exists"
+            exit 1
+          else
+            echo "File does not exist"
+          fi

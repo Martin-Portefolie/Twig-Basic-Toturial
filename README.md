@@ -4,4 +4,5 @@ docker compose up -d
 docker compose exec phpfpm bin/console doctrine:migrations:migrate
 docker compose exec phpfpm bin/console doctrine:fixtures:load
 
-open browser :)
+docker compose ps
+open the project in the browser :)

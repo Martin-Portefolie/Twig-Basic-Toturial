@@ -6,6 +6,12 @@ on:
       - main
 
 jobs:
+  create-network:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create Frontend Network
+        run: docker network create frontend
+
   docker-compose:
     runs-on: ubuntu-latest
     steps:

@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+{% import 'macros.twig'as myMacro %}
+
+{% block title %}Hello Dog!{% endblock %}
+
+{% block body %}
+{#    {{dump(_context|keys) }}#}
+{#    {{ dump(products) }}#}
+{#  Uncomments   #}
+
+
+    <div class="hero-unit">
+        <h1>Suit Up</h1>
+        <p>
+            Dog clothes description
+        </p>
+            <div class="sale-ends-at">
+                        Sale Ends: {{ 'tomorrow noon'|date('l jS \of F Y h:i:s A') }}
+            </div>
+    </div>
+
+    {# Awesome comment #}
+    {{ include('_banner.twig' , {'backgroundColor' : 'yellow'}) }}
+
+    <div class="row">
+        {{ myMacro.printProduct(products, "Oh now! We're alle out of super awesome dog clothes !") }}
+    </div>
+    <div class="row">
+                {% if products|length is even %}
+                    <div class="span12">
+                        there is an even number omg!
+                    </div>
+                {% endif %}
+    </div>
+{% endblock %}

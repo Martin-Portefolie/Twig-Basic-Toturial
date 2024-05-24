@@ -1,0 +1,10 @@
+{#{% if backgroundColor is defined %}#}
+{#    {% set backgroundColor = backgroundColor %}#}
+{#{% else %}#}
+{#    {% set backgroundColor = 'red'%}#}
+{#{% endif %}#}
+
+<div class="well" style="background-color: {{ backgroundColor is defined ? backgroundColor : 'purple' }}">
+    <h3> Save some dog food</h3>
+    <p>Sale all summer</p>
+</div>

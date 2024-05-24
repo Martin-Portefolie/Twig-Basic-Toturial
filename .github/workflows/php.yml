@@ -5,14 +5,13 @@ on:
     branches: [ "main" ]
 
 
-- name: Check if file was created
+  name: Check if file was created
   run: |
-      if [ -f test.txt ]; then
+      if [ -f README.md ]; then
           echo "File exists"
           exit 1
       else
           echo "File does not exist"
       fi
-- name: Did the last step fail?
-  if: ${{ failure() }}
-  run: echo "Last step failed, so file must have maybe been created"
+      
+

@@ -13,7 +13,7 @@ jobs:
 
       - name: Check if file was created
         run: |
-            if [ -f README1.MD ]; then
+            if [ -f MADME1.MD ]; then
                 echo "File exists"
                 exit 1
             else

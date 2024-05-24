@@ -6,19 +6,14 @@ on:
       - main
 
 jobs:
-  create-network:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Create Frontend Network
-        run: docker network create frontend
-
-  docker-compose:
+  docker-setup:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      # Add your other steps here (e.g., installing Docker, setting up environment, etc.)
+      - name: Create Frontend Network
+        run: docker network create frontend
 
       - name: Run Docker Compose
         run: docker-compose up -d
